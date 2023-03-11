@@ -1,6 +1,7 @@
 const express = require("express");
-const Course = require("../models/courseModel");
+const { createCourse } = require("../controllers/courseController");
 
+// create instance of the router
 const router = express.Router();
 
 // GET all courses
@@ -14,26 +15,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST a new course
-router.post("/", async (req, res) => {
-    const { code, name, description, professor, term, grade, rating } = req.body;
-
-    try {
-      const course = await Course.create({
-        code,
-        name,
-        description,
-        professor,
-        term,
-        grade,
-        rating,
-      });
-      res.status(200).json(course)
-    } catch (error) {
-      res.status(400).json({error: error.message})
-    }
-
-  res.json({ mssg: "POST a new course" });
-});
+router.post("/", createCourse);
 
 // DELETE a course
 router.delete("/:id", (req, res) => {
@@ -45,4 +27,5 @@ router.patch("/:id", (req, res) => {
   res.json({ mssg: "UPDATE a course" });
 });
 
+// export router
 module.exports = router;
