@@ -2,10 +2,31 @@
 
 // import model to interact with database
 const Course = require("../models/courseModel");
+const mongoose = require("mongoose");
 
 // get all courses
+const getCourses = async (req, res) => {
+  const courses = await Course.find({}).sort({ createdAt: -1 });
+
+  res.status(200).json(courses);
+};
 
 // get a single course
+const getCourse = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "No such course" });
+  }
+
+  const course = await Course.findById(id);
+
+  if (!course) {
+    return res.status(404).json({ error: "No such course" });
+  }
+
+  res.status(200).json(course);
+};
 
 // create new course
 const createCourse = async (req, res) => {
@@ -33,5 +54,7 @@ const createCourse = async (req, res) => {
 // update a course
 
 module.exports = {
+  getCourses,
+  getCourse,
   createCourse,
 };
