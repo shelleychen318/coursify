@@ -10,17 +10,12 @@ const StyledNavbar = styled.div`
   justify-content: space-between;
 `;
 
-const StyledLink = styled(Link)`
-  color: var(--primary);
-  text-decoration: none;
-`;
-
 const Navbar = () => {
   return (
     <StyledNavbar>
-      <StyledLink to="/">
+      <Link to="/">
         <h1>coursify</h1>
-      </StyledLink>
+      </Link>
     </StyledNavbar>
   );
 };

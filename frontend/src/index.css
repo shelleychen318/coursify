@@ -25,3 +25,8 @@ h1,
 h2 {
   font-weight: 600;
 }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
