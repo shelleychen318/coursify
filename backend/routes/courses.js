@@ -3,6 +3,8 @@ const {
   getCourses,
   getCourse,
   createCourse,
+  deleteCourse,
+  updateCourse,
 } = require("../controllers/courseController");
 
 // create instance of the router
@@ -18,14 +20,10 @@ router.get("/:id", getCourse);
 router.post("/", createCourse);
 
 // DELETE a course
-router.delete("/:id", (req, res) => {
-  res.json({ mssg: "DELETE a course" });
-});
+router.delete("/:id", deleteCourse);
 
 // UPDATE a course
-router.patch("/:id", (req, res) => {
-  res.json({ mssg: "UPDATE a course" });
-});
+router.patch("/:id", updateCourse);
 
 // export router
 module.exports = router;
