@@ -10,11 +10,15 @@ const StyledNavbar = styled.div`
   justify-content: space-between;
 `;
 
+const StyledLogo = styled.h1`
+  font-weight: 600;
+`;
+
 const Navbar = () => {
   return (
     <StyledNavbar>
       <Link to="/">
-        <h1>coursify</h1>
+        <StyledLogo>coursify</StyledLogo>
       </Link>
     </StyledNavbar>
   );

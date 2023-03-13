@@ -3,7 +3,7 @@
 :root {
   --bg: #ffffff;
   --main-text: #393939;
-  --card-bg: #f4fdf4;
+  --card-bg: #C9CEFF;
   --primary: #5368df;
   --error: #e7195a;
   --error-bg: #fff0f3;
@@ -21,9 +21,15 @@ body {
   margin: 0 auto;
 }
 
-h1,
-h2 {
-  font-weight: 600;
+p {
+  font-size: 1.3vw;
+  margin:0;
+  padding-bottom:0.5rem;
+  /* margin-top: 0.1rem; */
+}
+
+strong {
+  font-weight: 550;
 }
 
 a {
