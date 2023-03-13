@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
 :root {
-  --bg: #ffffff;
-  --main-text: #393939;
-  --card-bg: #C9CEFF;
+  --bg: #faf9f6;
+  --main-text: #1f1d1d;
+  --sub-text: #373737;
+  --card-bg: #c9ceff;
   --primary: #5368df;
+  --secondary: #212c51;
   --error: #e7195a;
   --error-bg: #fff0f3;
 }
@@ -23,9 +25,9 @@ body {
 
 p {
   font-size: 1.3vw;
-  margin:0;
-  padding-bottom:0.5rem;
-  /* margin-top: 0.1rem; */
+  margin: 0;
+  padding-bottom: 0.5rem;
+  color: var(--sub-text);
 }
 
 strong {

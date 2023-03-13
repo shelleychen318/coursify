@@ -19,6 +19,7 @@ const StyledTitle = styled.h2`
   padding-top:2rem;
   font-weight: 600;
   font-size: 2vw;
+  color: var(--secondary);
 `;
 
 const Home = () => {
