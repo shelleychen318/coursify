@@ -16,6 +16,7 @@ const StyledHomeContainer = styled.div`
 
 const StyledTitle = styled.h2`
   align-self: flex-start;
+  padding-top:2rem;
   font-weight: 600;
   font-size: 2vw;
 `;
