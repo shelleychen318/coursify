@@ -25,14 +25,14 @@
 
 .button {
   width: fit-content;
-  padding: 1rem;
+  padding: 0.8rem;
   font-family: "Poppins";
   background-color: var(--primary);
   border: none;
   color: var(--bg);
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   align-self: flex-end;
   transition: all 0.3s ease-in-out;
 }
