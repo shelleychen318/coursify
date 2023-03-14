@@ -28,10 +28,12 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h2>My Courses</h2>
-      <button type="button" onClick={handleClick} className="button">
-        Add a course
-      </button>
+      <div className="titleContainer">
+        <h2>My Courses</h2>
+        <button type="button" onClick={handleClick} className="button">
+          Add a course
+        </button>
+      </div>
       {form && <div>Form opened</div>}
       {courses &&
         courses.map((course) => (

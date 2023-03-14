@@ -11,10 +11,16 @@
 .container h2 {
   align-self: flex-start;
   margin: 0;
-  padding-top: 4rem;
+  padding-top: 3rem;
   font-weight: 600;
   font-size: 30px;
   color: var(--secondary);
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .button {
@@ -27,4 +33,11 @@
   border-radius: 0.5rem;
   cursor: pointer;
   font-size: 14px;
+  align-self: flex-end;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
 }
