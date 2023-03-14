@@ -22,19 +22,3 @@ body {
   padding: 0.5rem 3rem;
   margin: 0 auto;
 }
-
-p {
-  font-size: 1.3vw;
-  margin: 0;
-  padding-bottom: 0.5rem;
-  color: var(--sub-text);
-}
-
-strong {
-  font-weight: 550;
-}
-
-a {
-  color: var(--primary);
-  text-decoration: none;
-}

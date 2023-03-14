@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+  max-width: 800px;
+  gap: 3rem;
+}
+
+.container h2 {
+  align-self: flex-start;
+  padding-top: 2rem;
+  font-weight: 600;
+  font-size: 2vw;
+  color: var(--secondary);
+}

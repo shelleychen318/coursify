@@ -1,0 +1,18 @@
+.navbar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.navbar h1 {
+  font-weight: 600;
+}

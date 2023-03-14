@@ -1,0 +1,31 @@
+.cardContainer {
+  background: var(--card-bg);
+  border-radius: 2rem;
+  padding: 2rem 3rem;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+.courseCode {
+  font-size: 1.9vw;
+  margin: 0;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.courseName {
+  font-size: 1.6vw;
+  margin: 0.5rem 0 1.5rem;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.text {
+  font-size: 1.3vw;
+  margin: 0;
+  padding-bottom: 0.5rem;
+  color: var(--sub-text);
+}
+
+.heading {
+    font-weight: 550;
+}

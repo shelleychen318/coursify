@@ -1,26 +1,8 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import "./home.css";
 
 // components
-import CourseCard from "../components/CourseCard";
-
-const StyledHomeContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  padding-top: 1rem;
-  padding-bottom: 6rem;
-  max-width: 800px;
-  gap: 3rem;
-`;
-
-const StyledTitle = styled.h2`
-  align-self: flex-start;
-  padding-top:2rem;
-  font-weight: 600;
-  font-size: 2vw;
-  color: var(--secondary);
-`;
+import CourseCard from "../../components/CourseCard";
 
 const Home = () => {
   const [courses, setCourses] = useState(null);
@@ -39,13 +21,13 @@ const Home = () => {
   }, []);
 
   return (
-    <StyledHomeContainer>
-      <StyledTitle>Your Courses</StyledTitle>
+    <div className="container">
+      <h2>Your Courses</h2>
       {courses &&
         courses.map((course) => (
           <CourseCard key={course._id} course={course} />
         ))}
-    </StyledHomeContainer>
+    </div>
   );
 };
 
