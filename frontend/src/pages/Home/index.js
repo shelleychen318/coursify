@@ -20,9 +20,19 @@ const Home = () => {
     fetchCourses();
   }, []);
 
+  const [form, setForm] = useState(false);
+
+  const handleClick = () => {
+    setForm(!form);
+  };
+
   return (
     <div className="container">
-      <h2>Your Courses</h2>
+      <h2>My Courses</h2>
+      <button type="button" onClick={handleClick} className="button">
+        Add a course
+      </button>
+      {form && <div>Form opened</div>}
       {courses &&
         courses.map((course) => (
           <CourseCard key={course._id} course={course} />
