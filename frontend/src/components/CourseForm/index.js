@@ -5,13 +5,13 @@ const CourseForm = ({ course }) => {
     <form className="formContainer">
       {/* <h3>Add a new course</h3> */}
       <label>
-        Course Code: <input type="text" className="shortInput" />
+        Course Code: <input type="text" />
       </label>
       <label>
-        Course Name: <input type="text" className="shortInput" />
+        Course Name: <input type="text" />
       </label>
-      <label>
-        Description: <input type="text" className="longInput" />
+      <label className="longInput">
+        Description: <textarea rows={5} />
       </label>
     </form>
   );
