@@ -1,16 +1,12 @@
 .formContainer {
   width: 100%;
+  height:fit-content;
+  padding-bottom: 5rem;
   display: inline-grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: fit-content;
-  grid-column-gap: 6%;
-  grid-row-gap: 6%;
-  /* grid-auto-rows: 100px; */
-}
-
-.formContainer h3 {
-  font-size: 22px;
-  font-weight: 500;
+  /* grid-template-rows: repeat(4, fit-content); */
+  grid-column-gap: 5%;
+  grid-row-gap: 5%;
 }
 
 input[type="text"],

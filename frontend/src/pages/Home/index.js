@@ -22,17 +22,25 @@ const Home = () => {
   }, []);
 
   const [form, setForm] = useState(false);
+  const [buttonText, setButtonText] = useState("+ New Course");
 
   const handleClick = () => {
     setForm(!form);
+    setButtonText((state) =>
+      state === "+ New Course" ? "Cancel" : "+ New Course"
+    );
   };
 
   return (
     <div className="container">
       <div className="titleContainer">
         <h2>My Courses</h2>
-        <button type="button" onClick={handleClick} className="button">
-          Add a course
+        <button
+          type="button"
+          onClick={handleClick}
+          className={`button ${buttonText === "Cancel" ? "cancel" : ""}`}
+        >
+          {buttonText}
         </button>
       </div>
       {form && <CourseForm />}

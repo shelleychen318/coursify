@@ -3,7 +3,6 @@ import "./courseForm.css";
 const CourseForm = ({ course }) => {
   return (
     <form className="formContainer">
-      {/* <h3>Add a new course</h3> */}
       <label>
         Course Code: <input type="text" />
       </label>
@@ -11,7 +10,19 @@ const CourseForm = ({ course }) => {
         Course Name: <input type="text" />
       </label>
       <label className="longInput">
-        Description: <textarea rows={5} />
+        Description: <textarea rows={4} />
+      </label>
+      <label>
+        Professor: <input type="text" />
+      </label>
+      <label>
+        School Term: <input type="text" />
+      </label>
+      <label>
+        Grade: <input type="text" />
+      </label>
+      <label>
+        Rating (out of 10): <input type="text" />
       </label>
     </form>
   );
