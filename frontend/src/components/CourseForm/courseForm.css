@@ -1,12 +1,20 @@
 .formContainer {
-  background-color: var(--error-bg);
+  /* background-color: var(--error-bg);
   position: absolute;
   left: 0;
   right: 0;
-  margin: auto;
-  width: fit-content;
-  padding: 2rem;
+  margin: auto; */
+  /* padding: 2rem; */
   /* border-radius: 4rem; */
+
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: [first] 47% [line2] 47%;
+  /* grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line]; */
+  /* justify-items: center; */
+  grid-column-gap: 6%;
+  /* align-self: flex-start; */
+  /* padding:1rem; */
 }
 
 .formContainer h3 {
@@ -14,6 +22,15 @@
   font-size: 22px;
   font-weight: 500;
 }
+
+/* .gridContainer {
+  display: inline-grid;
+  grid-template-columns: [first] 50% [line2] 50%;
+  grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+  justify-items: center;
+  grid-column-gap: 1rem;
+padding:1rem;
+} */
 
 input[type="text"] {
   width: 100%;
