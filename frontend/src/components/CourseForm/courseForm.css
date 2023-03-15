@@ -1,0 +1,16 @@
+.formContainer {
+  background-color: var(--error-bg);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  padding: 2rem;
+  /* border-radius: 4rem; */
+}
+
+.formContainer h3 {
+  /* align-self: flex-start; */
+  font-size: 22px;
+  font-weight: 500;
+}

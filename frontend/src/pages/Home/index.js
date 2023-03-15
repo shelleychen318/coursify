@@ -3,6 +3,7 @@ import "./home.css";
 
 // components
 import CourseCard from "../../components/CourseCard";
+import CourseForm from "../../components/CourseForm";
 
 const Home = () => {
   const [courses, setCourses] = useState(null);
@@ -34,7 +35,7 @@ const Home = () => {
           Add a course
         </button>
       </div>
-      {form && <div>Form opened</div>}
+      {form && <CourseForm />}
       {courses &&
         courses.map((course) => (
           <CourseCard key={course._id} course={course} />
