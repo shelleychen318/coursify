@@ -16,7 +16,7 @@ const CourseForm = ({ course }) => {
         Professor: <input type="text" />
       </label>
       <label>
-        School Term: <input type="text" />
+        Term: <input type="text" />
       </label>
       <label>
         Grade: <input type="text" />
