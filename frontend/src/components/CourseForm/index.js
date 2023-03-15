@@ -4,14 +4,15 @@ const CourseForm = ({ course }) => {
   return (
     <form className="formContainer">
       {/* <h3>Add a new course</h3> */}
-      {/* <div className="gridContainer"> */}
-        <label>
-          Course Code: <input type="text" />
-        </label>
-        <label>
-          Course Name: <input type="text" />
-        </label>
-      {/* </div> */}
+      <label>
+        Course Code: <input type="text" className="shortInput" />
+      </label>
+      <label>
+        Course Name: <input type="text" className="shortInput" />
+      </label>
+      <label>
+        Description: <input type="text" className="longInput" />
+      </label>
     </form>
   );
 };
