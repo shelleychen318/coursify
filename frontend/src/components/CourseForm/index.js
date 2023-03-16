@@ -49,6 +49,7 @@ const CourseForm = ({ course }) => {
         {/* Term: <input type="text" /> */}
         Term:
         <select onChange={(e) => setTerm(e.target.value)} value={term}>
+          <option hidden selected></option>
           <option value="1A">1A</option>
           <option value="1B">1B</option>
           <option value="2A">2A</option>
@@ -71,6 +72,7 @@ const CourseForm = ({ course }) => {
         Rating (out of 10):
         {/* <input type="text" /> */}
         <select onChange={(e) => setRating(e.target.value)} value={rating}>
+          <option hidden selected></option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
