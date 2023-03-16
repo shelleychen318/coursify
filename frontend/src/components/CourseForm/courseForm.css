@@ -26,3 +26,9 @@ textarea {
 .longInput {
   grid-column: 1 / span 2;
 }
+
+.addButton {
+  grid-column: 2 / span 1;
+  justify-self: flex-end;
+  padding: inherit 2rem ;
+}

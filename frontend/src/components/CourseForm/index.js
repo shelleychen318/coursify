@@ -24,6 +24,7 @@ const CourseForm = ({ course }) => {
       <label>
         Rating (out of 10): <input type="text" />
       </label>
+      <button className="button addButton">Add</button>
     </form>
   );
 };
