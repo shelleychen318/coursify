@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useCoursesContext } from "../../hooks/useCoursesContext";
-import "./home.css";
+import { useCoursesContext } from "../hooks/useCoursesContext";
+import styles from "./home.module.css";
 
 // components
-import CourseCard from "../../components/CourseCard";
-import CourseForm from "../../components/CourseForm";
+import CourseCard from "../components/CourseCard";
+import CourseForm from "../components/CourseForm";
 
 const Home = () => {
   const { courses, dispatch } = useCoursesContext();
@@ -41,13 +41,13 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
-      <div className="titleContainer">
+    <div className={styles.container}>
+      <div className={styles.titleContainer}>
         <h2>{titleText}</h2>
         <button
           type="button"
           onClick={toggleForm}
-          className={`button ${buttonText === "Cancel" ? "cancel" : ""}`}
+          className={`${styles.button} ${buttonText == "Cancel" ? styles.cancel : ""}`}
         >
           {buttonText}
         </button>

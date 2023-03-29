@@ -4,7 +4,6 @@
   padding-bottom: 7rem;
   display: inline-grid;
   grid-template-columns: repeat(2, 1fr);
-  /* grid-template-rows: repeat(4, fit-content); */
   grid-column-gap: 5%;
   grid-row-gap: 5%;
 }
@@ -28,9 +27,25 @@ textarea, select {
 }
 
 .addButton {
+  width: fit-content;
+  padding: 0.8rem 1rem;
+  font-family: "Poppins";
+  background-color: var(--primary);
+  border: none;
+  color: var(--bg);
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-end;
+  transition: all 0.3s ease-in-out;
+
   grid-column: 2 / span 1;
   justify-self: flex-end;
   padding: inherit 2rem ;
+}
+
+.addButton:hover {
+  filter: brightness(115%);
 }
 
 .error {

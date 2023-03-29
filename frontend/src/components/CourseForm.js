@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useCoursesContext } from "../../hooks/useCoursesContext";
-import "./courseForm.css";
+import { useCoursesContext } from "../hooks/useCoursesContext";
+import styles from "./CourseForm.module.css";
 
 const CourseForm = ({ onSubmit }) => {
   const { dispatch } = useCoursesContext();
@@ -47,7 +47,7 @@ const CourseForm = ({ onSubmit }) => {
   };
 
   return (
-    <form className="formContainer" onSubmit={handleSubmit}>
+    <form className={styles.formContainer} onSubmit={handleSubmit}>
       <label>
         Course Code:{" "}
         <input
@@ -64,7 +64,7 @@ const CourseForm = ({ onSubmit }) => {
           value={name}
         />
       </label>
-      <label className="longInput">
+      <label className={styles.longInput}>
         Description:
         <textarea
           rows={4}
@@ -82,7 +82,6 @@ const CourseForm = ({ onSubmit }) => {
         />
       </label>
       <label>
-        {/* Term: <input type="text" /> */}
         Term:
         <select onChange={(e) => setTerm(e.target.value)} value={term}>
           <option value="" disabled></option>
@@ -106,7 +105,6 @@ const CourseForm = ({ onSubmit }) => {
       </label>
       <label>
         Rating (out of 10):
-        {/* <input type="text" /> */}
         <select onChange={(e) => setRating(e.target.value)} value={rating}>
           <option value="" disabled></option>
           <option value="1">1</option>
@@ -121,8 +119,8 @@ const CourseForm = ({ onSubmit }) => {
           <option value="10">10</option>
         </select>
       </label>
-      {error && <div className="error">{error}</div>}
-      <button className="button addButton">Add Course</button>
+      {error && <div className={styles.error}>{error}</div>}
+      <button className={styles.addButton}>Add Course</button>
     </form>
   );
 };

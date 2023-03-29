@@ -7,11 +7,12 @@
   --card-bg: #c9ceff;
   --primary: #5368df;
   --secondary: #212c51;
-  --cancel:  #808080;
+  --cancel: #808080;
   --error: #e7195a;
   --error-bg: #fff0f3;
 }
-html, body {
+html,
+body {
   background: var(--bg);
   color: var(--main-text);
   margin: 0;
@@ -22,4 +23,25 @@ html, body {
   max-width: 1400px;
   padding: 0.5rem 3rem;
   margin: 0 auto;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+p {
+  font-size: 18px;
 }
