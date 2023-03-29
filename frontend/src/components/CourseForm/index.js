@@ -9,9 +9,40 @@ const CourseForm = ({ course }) => {
   const [term, setTerm] = useState("");
   const [grade, setGrade] = useState("");
   const [rating, setRating] = useState("");
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const course = { code, name, description, professor, term, grade, rating };
+
+    const response = await fetch("/api/courses", {
+      method: "POST",
+      body: JSON.stringify(course),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await response.json();
+
+    if (!response.ok) {
+      setError(json.error);
+    }
+    if (response.ok) {
+      setCode("");
+      setName("");
+      setDescription("");
+      setProfessor("");
+      setTerm("");
+      setGrade("");
+      setRating("");
+      setError(null);
+      console.log("new course added", json);
+    }
+  };
 
   return (
-    <form className="formContainer">
+    <form className="formContainer" onSubmit={handleSubmit}>
       <label>
         Course Code:{" "}
         <input
@@ -49,7 +80,7 @@ const CourseForm = ({ course }) => {
         {/* Term: <input type="text" /> */}
         Term:
         <select onChange={(e) => setTerm(e.target.value)} value={term}>
-          <option hidden selected></option>
+          <option value="" disabled></option>
           <option value="1A">1A</option>
           <option value="1B">1B</option>
           <option value="2A">2A</option>
@@ -72,7 +103,7 @@ const CourseForm = ({ course }) => {
         Rating (out of 10):
         {/* <input type="text" /> */}
         <select onChange={(e) => setRating(e.target.value)} value={rating}>
-          <option hidden selected></option>
+          <option value="" disabled></option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -85,7 +116,8 @@ const CourseForm = ({ course }) => {
           <option value="10">10</option>
         </select>
       </label>
-      <button className="button addButton">Add</button>
+      {error && <div className="error">{error}</div>}
+      <button className="button addButton">Add Course</button>
     </form>
   );
 };
