@@ -25,6 +25,7 @@ const CourseCard = ({ course }) => {
         <strong className="heading">Rating: </strong>
         {course.rating}/10
       </p>
+      <p>{course.createdAt}</p>
     </div>
   );
 };

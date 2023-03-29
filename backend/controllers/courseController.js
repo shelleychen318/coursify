@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 // get all courses
 const getCourses = async (req, res) => {
-  const courses = await Course.find({}).sort({ createdAt: -1 });
+  const courses = await Course.find({}).sort({createdAt: -1})
 
   res.status(200).json(courses);
 };

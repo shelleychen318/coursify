@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCoursesContext } from "../../hooks/useCoursesContext";
 import "./home.css";
 
 // components
@@ -6,7 +7,7 @@ import CourseCard from "../../components/CourseCard";
 import CourseForm from "../../components/CourseForm";
 
 const Home = () => {
-  const [courses, setCourses] = useState(null);
+  const { courses, dispatch } = useCoursesContext();
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -14,7 +15,7 @@ const Home = () => {
       const json = await response.json();
 
       if (response.ok) {
-        setCourses(json);
+        dispatch({ type: "SET_COURSES", payload: json });
       }
     };
 
