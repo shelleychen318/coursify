@@ -22,12 +22,12 @@ const Home = () => {
     fetchCourses();
   }, []);
 
-  const [form, setForm] = useState(false);
+  const [showform, setShowForm] = useState(false);
   const [buttonText, setButtonText] = useState("+ New Course");
   const [titleText, setTitleText] = useState("My Courses");
 
   const toggleForm = () => {
-    setForm(!form);
+    setShowForm(!showform);
     setButtonText((state) =>
       state === "+ New Course" ? "Cancel" : "+ New Course"
     );
@@ -36,7 +36,7 @@ const Home = () => {
     );
   };
 
-  const handleCourseSubmit = () => {
+  const handleFormSubmit = () => {
     toggleForm();
   };
 
@@ -52,7 +52,7 @@ const Home = () => {
           {buttonText}
         </button>
       </div>
-      {form && <CourseForm onSubmit={handleCourseSubmit} />}
+      {showform && <CourseForm onSubmit={handleFormSubmit} />}
       {courses &&
         courses.map((course) => (
           <CourseCard key={course._id} course={course} />
