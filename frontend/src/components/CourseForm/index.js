@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useCoursesContext } from "../../hooks/useCoursesContext";
 import "./courseForm.css";
 
-const CourseForm = ({ course }) => {
+const CourseForm = ({ onSubmit }) => {
   const { dispatch } = useCoursesContext();
 
   const [code, setCode] = useState("");
@@ -42,6 +42,7 @@ const CourseForm = ({ course }) => {
       setError(null);
       console.log("new course added", json);
       dispatch({ type: "CREATE_COURSE", payload: json });
+      onSubmit();
     }
   };
 

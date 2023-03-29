@@ -26,7 +26,7 @@ const Home = () => {
   const [buttonText, setButtonText] = useState("+ New Course");
   const [titleText, setTitleText] = useState("My Courses");
 
-  const handleClick = () => {
+  const toggleForm = () => {
     setForm(!form);
     setButtonText((state) =>
       state === "+ New Course" ? "Cancel" : "+ New Course"
@@ -36,19 +36,23 @@ const Home = () => {
     );
   };
 
+  const handleCourseSubmit = () => {
+    toggleForm();
+  };
+
   return (
     <div className="container">
       <div className="titleContainer">
         <h2>{titleText}</h2>
         <button
           type="button"
-          onClick={handleClick}
+          onClick={toggleForm}
           className={`button ${buttonText === "Cancel" ? "cancel" : ""}`}
         >
           {buttonText}
         </button>
       </div>
-      {form && <CourseForm />}
+      {form && <CourseForm onSubmit={handleCourseSubmit} />}
       {courses &&
         courses.map((course) => (
           <CourseCard key={course._id} course={course} />
