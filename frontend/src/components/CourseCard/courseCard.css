@@ -1,4 +1,5 @@
 .cardContainer {
+  position: relative;
   background: var(--card-bg);
   border-radius: 2rem;
   padding: 2rem 3rem;
@@ -28,4 +29,11 @@
 
 .heading {
     font-weight: 550;
+}
+
+.delete {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  cursor: pointer;
 }
