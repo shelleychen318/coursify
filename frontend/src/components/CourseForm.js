@@ -13,6 +13,7 @@ const CourseForm = ({ onSubmit }) => {
   const [grade, setGrade] = useState("");
   const [rating, setRating] = useState("");
   const [error, setError] = useState(null);
+  const [emptyFields, setEmptyFields] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +31,7 @@ const CourseForm = ({ onSubmit }) => {
 
     if (!response.ok) {
       setError(json.error);
+      setEmptyFields(json.emptyFields);
     }
     if (response.ok) {
       setCode("");
@@ -40,6 +42,7 @@ const CourseForm = ({ onSubmit }) => {
       setGrade("");
       setRating("");
       setError(null);
+      setEmptyFields([]);
       console.log("new course added", json);
       dispatch({ type: "CREATE_COURSE", payload: json });
       onSubmit();
@@ -54,6 +57,7 @@ const CourseForm = ({ onSubmit }) => {
           type="text"
           onChange={(e) => setCode(e.target.value)}
           value={code}
+          className={emptyFields.includes("code") ? styles.emptyField : ""}
         />
       </label>
       <label>
@@ -62,6 +66,7 @@ const CourseForm = ({ onSubmit }) => {
           type="text"
           onChange={(e) => setName(e.target.value)}
           value={name}
+          className={emptyFields.includes("name") ? styles.emptyField : ""}
         />
       </label>
       <label className={styles.longInput}>
@@ -71,6 +76,7 @@ const CourseForm = ({ onSubmit }) => {
           type="text"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
+          className={emptyFields.includes("description") ? styles.emptyField : ""}
         />
       </label>
       <label>
@@ -79,11 +85,16 @@ const CourseForm = ({ onSubmit }) => {
           type="text"
           onChange={(e) => setProfessor(e.target.value)}
           value={professor}
+          className={emptyFields.includes("professor") ? styles.emptyField : ""}
         />
       </label>
       <label>
         Term:
-        <select onChange={(e) => setTerm(e.target.value)} value={term}>
+        <select
+          onChange={(e) => setTerm(e.target.value)}
+          value={term}
+          className={emptyFields.includes("term") ? styles.emptyField : ""}
+        >
           <option value="" disabled></option>
           <option value="1A">1A</option>
           <option value="1B">1B</option>
@@ -101,11 +112,16 @@ const CourseForm = ({ onSubmit }) => {
           type="text"
           onChange={(e) => setGrade(e.target.value)}
           value={grade}
+          className={emptyFields.includes("grade") ? styles.emptyField : ""}
         />
       </label>
       <label>
         Rating (out of 10):
-        <select onChange={(e) => setRating(e.target.value)} value={rating}>
+        <select
+          onChange={(e) => setRating(e.target.value)}
+          value={rating}
+          className={emptyFields.includes("rating") ? styles.emptyField : ""}
+        >
           <option value="" disabled></option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -119,7 +135,7 @@ const CourseForm = ({ onSubmit }) => {
           <option value="10">10</option>
         </select>
       </label>
-      {error && <div className={styles.error}>{error}</div>}
+      {error && <div className={styles.errorMessage}>{error}</div>}
       <button className={styles.addButton}>Add Course</button>
     </form>
   );

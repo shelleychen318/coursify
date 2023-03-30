@@ -34,6 +34,34 @@ const getCourse = async (req, res) => {
 const createCourse = async (req, res) => {
   const { code, name, description, professor, term, grade, rating } = req.body;
 
+  // keep track of any empty fields and send back a user-friendly error message
+  let emptyFields = [];
+
+  if (!code) {
+    emptyFields.push("code");
+  }
+  if (!name) {
+    emptyFields.push("name");
+  }
+  if (!description) {
+    emptyFields.push("description");
+  }
+  if (!professor) {
+    emptyFields.push("professor");
+  }
+  if (!term) {
+    emptyFields.push("term");
+  }
+  if (!grade) {
+    emptyFields.push("grade");
+  }
+  if (!rating) {
+    emptyFields.push("rating");
+  }
+  if (emptyFields.length > 0) {
+    return res.status(400).json({ error: "Please fill in all fields.", emptyFields });
+  }
+
   // add new course doc to database
   try {
     const course = await Course.create({

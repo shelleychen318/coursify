@@ -48,10 +48,15 @@ textarea, select {
   filter: brightness(115%);
 }
 
-.error {
+input.emptyField, .emptyField {
+  border: 1px solid var(--error);
+}
+
+.errorMessage {
   padding: 0.5rem;
   background: var(--error-bg);
   border: 1px solid var(--error);
   color: var(--error);
   border-radius: 0.5rem;
+  align-self: center;
 }
