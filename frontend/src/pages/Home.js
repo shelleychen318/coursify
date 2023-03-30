@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
-        <h2>{titleText}</h2>
+        <h2 className={styles.titleText}>{titleText}</h2>
         <button
           type="button"
           onClick={toggleForm}
