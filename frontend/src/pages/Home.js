@@ -20,7 +20,7 @@ const Home = () => {
     };
 
     fetchCourses();
-  }, []);
+  }, [dispatch]);
 
   const [showform, setShowForm] = useState(false);
   const [buttonText, setButtonText] = useState("+ New Course");
@@ -47,7 +47,7 @@ const Home = () => {
         <button
           type="button"
           onClick={toggleForm}
-          className={`${styles.button} ${buttonText == "Cancel" ? styles.cancel : ""}`}
+          className={`${styles.button} ${buttonText === "Cancel" ? styles.cancel : ""}`}
         >
           {buttonText}
         </button>

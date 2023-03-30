@@ -43,7 +43,6 @@ const CourseForm = ({ onSubmit }) => {
       setRating("");
       setError(null);
       setEmptyFields([]);
-      console.log("new course added", json);
       dispatch({ type: "CREATE_COURSE", payload: json });
       onSubmit();
     }
