@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 // get all courses
 const getCourses = async (req, res) => {
-  const courses = await Course.find({}).sort({createdAt: -1})
+  const courses = await Course.find({}).sort({ createdAt: -1 });
 
   res.status(200).json(courses);
 };
@@ -59,7 +59,9 @@ const createCourse = async (req, res) => {
     emptyFields.push("rating");
   }
   if (emptyFields.length > 0) {
-    return res.status(400).json({ error: "Please fill in all fields.", emptyFields });
+    return res
+      .status(400)
+      .json({ error: "Please fill in all fields.", emptyFields });
   }
 
   // add new course doc to database
