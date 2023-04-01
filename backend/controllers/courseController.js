@@ -1,4 +1,4 @@
-// This file contains controller functions to handle the various api requests.
+/* This file contains controller functions to handle the various requests related to the courses. */
 
 // import model to interact with database
 const Course = require("../models/courseModel");

@@ -25,4 +25,10 @@
   top: 1.5rem;
   right: 2rem;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
+
+.delete:hover {
+  transform: scale(1.2);
+}
+
