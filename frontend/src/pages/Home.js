@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useCoursesContext } from "../hooks/useCoursesContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import styles from "./home.module.css";
 
 // components
@@ -8,10 +9,15 @@ import CourseForm from "../components/CourseForm";
 
 const Home = () => {
   const { courses, dispatch } = useCoursesContext();
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const response = await fetch("/api/courses");
+      const response = await fetch("/api/courses", {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
       const json = await response.json();
 
       if (response.ok) {
@@ -19,8 +25,11 @@ const Home = () => {
       }
     };
 
-    fetchCourses();
-  }, [dispatch]);
+    // only try to fetch courses if we have a value for user
+    if (user) {
+      fetchCourses();
+    }
+  }, [dispatch, user]);
 
   const [showform, setShowForm] = useState(false);
   const [buttonText, setButtonText] = useState("+ New Course");
@@ -41,23 +50,29 @@ const Home = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.titleContainer}>
-        <h2 className={styles.titleText}>{titleText}</h2>
-        <button
-          type="button"
-          onClick={toggleForm}
-          className={`${styles.button} ${buttonText === "Cancel" ? styles.cancel : ""}`}
-        >
-          {buttonText}
-        </button>
-      </div>
-      {showform && <CourseForm onSubmit={handleFormSubmit} />}
-      {courses &&
-        courses.map((course) => (
-          <CourseCard key={course._id} course={course} />
-        ))}
-    </div>
+    <>
+      {user && (
+        <div className={styles.container}>
+          <div className={styles.titleContainer}>
+            <h2 className={styles.titleText}>{titleText}</h2>
+            <button
+              type="button"
+              onClick={toggleForm}
+              className={`${styles.button} ${
+                buttonText === "Cancel" ? styles.cancel : ""
+              }`}
+            >
+              {buttonText}
+            </button>
+          </div>
+          {showform && <CourseForm onSubmit={handleFormSubmit} />}
+          {courses &&
+            courses.map((course) => (
+              <CourseCard key={course._id} course={course} />
+            ))}
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,13 +1,21 @@
 import { useCoursesContext } from "../hooks/useCoursesContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import { RiDeleteBinLine } from "react-icons/ri";
 import styles from "./CourseCard.module.css";
 
 const CourseCard = ({ course }) => {
   const { dispatch } = useCoursesContext();
+  const { user } = useAuthContext();
 
   const handleDelete = async () => {
+    if (!user) {
+      return
+    }
     const response = await fetch("/api/courses/" + course._id, {
       method: "DELETE",
+      headers: {
+        "Authorization": `Bearer ${user.token}`,
+      },
     });
     const json = await response.json();
 

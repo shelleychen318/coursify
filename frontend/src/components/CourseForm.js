@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useCoursesContext } from "../hooks/useCoursesContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import styles from "./CourseForm.module.css";
 
 const CourseForm = ({ onSubmit }) => {
   const { dispatch } = useCoursesContext();
+  const { user } = useAuthContext();
 
   const [code, setCode] = useState("");
   const [name, setName] = useState("");
@@ -18,6 +20,11 @@ const CourseForm = ({ onSubmit }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!user) {
+      setError("You must be logged in.");
+      return;
+    }
+
     const course = { code, name, description, professor, term, grade, rating };
 
     const response = await fetch("/api/courses", {
@@ -25,6 +32,7 @@ const CourseForm = ({ onSubmit }) => {
       body: JSON.stringify(course),
       headers: {
         "Content-Type": "application/json",
+        "Authorization": `Bearer ${user.token}`,
       },
     });
     const json = await response.json();
@@ -75,7 +83,9 @@ const CourseForm = ({ onSubmit }) => {
           type="text"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
-          className={emptyFields.includes("description") ? styles.emptyField : ""}
+          className={
+            emptyFields.includes("description") ? styles.emptyField : ""
+          }
         />
       </label>
       <label>
