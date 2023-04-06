@@ -29,7 +29,7 @@ input {
   box-sizing: border-box;
 }
 
-button {
+.loginButton {
   margin-top: 1rem;
   width: fit-content;
   padding: 0.8rem 1rem;
@@ -44,7 +44,7 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.loginButton:hover {
   background-color: #5D9C87;
 }
 

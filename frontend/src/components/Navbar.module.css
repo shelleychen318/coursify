@@ -1,4 +1,4 @@
-.header {
+.navContainer {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 3rem;
@@ -10,7 +10,6 @@
 .navLinks {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .logo {
@@ -38,17 +37,12 @@
   color: var(--bg);
 }
 
-.links {
-  display: flex;
-  align-items: center;
-}
-
-.links a {
+.loginLinks a {
   text-decoration: none;
   color: var(--main-text);
   margin-left: 2rem;
 }
 
-.links a:hover {
+.loginLinks a:hover {
   color: var(--primary);
 }

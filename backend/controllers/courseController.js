@@ -6,7 +6,9 @@ const mongoose = require("mongoose");
 
 // get all courses
 const getCourses = async (req, res) => {
-  const courses = await Course.find({}).sort({ createdAt: -1 });
+  // only fetch courses created by the current logged-in user
+  const user_id = req.user._id
+  const courses = await Course.find({ user_id }).sort({ createdAt: -1 });
 
   res.status(200).json(courses);
 };
@@ -66,6 +68,7 @@ const createCourse = async (req, res) => {
 
   // add new course doc to database
   try {
+    const user_id = req.user._id
     const course = await Course.create({
       code,
       name,
@@ -74,6 +77,7 @@ const createCourse = async (req, res) => {
       term,
       grade,
       rating,
+      user_id,
     });
     res.status(200).json(course);
   } catch (error) {

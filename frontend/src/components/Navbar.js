@@ -12,13 +12,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className={styles.header}>
+    <div className={styles.navContainer}>
       <Link to="/" className={styles.logo}>
         <h1>coursify</h1>
       </Link>
-      <div className={styles.navLinks}>
+      <div>
         {user && (
-          <div>
+          <div className={styles.navLinks}>
             <span>{user.email}</span>
             <button onClick={handleClick} className={styles.logoutButton}>
               Log out
@@ -26,7 +26,7 @@ const Navbar = () => {
           </div>
         )}
         {!user && (
-          <div className={styles.links}>
+          <div className={styles.loginLinks}>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
           </div>
