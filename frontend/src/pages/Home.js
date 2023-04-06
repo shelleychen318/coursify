@@ -50,29 +50,25 @@ const Home = () => {
   };
 
   return (
-    <>
-      {user && (
-        <div className={styles.container}>
-          <div className={styles.titleContainer}>
-            <h2 className={styles.titleText}>{titleText}</h2>
-            <button
-              type="button"
-              onClick={toggleForm}
-              className={`${styles.button} ${
-                buttonText === "Cancel" ? styles.cancel : ""
-              }`}
-            >
-              {buttonText}
-            </button>
-          </div>
-          {showform && <CourseForm onSubmit={handleFormSubmit} />}
-          {courses &&
-            courses.map((course) => (
-              <CourseCard key={course._id} course={course} />
-            ))}
-        </div>
-      )}
-    </>
+    <div className={styles.container}>
+      <div className={styles.titleContainer}>
+        <h2 className={styles.titleText}>{titleText}</h2>
+        <button
+          type="button"
+          onClick={toggleForm}
+          className={`${styles.button} ${
+            buttonText === "Cancel" ? styles.cancel : ""
+          }`}
+        >
+          {buttonText}
+        </button>
+      </div>
+      {showform && <CourseForm onSubmit={handleFormSubmit} />}
+      {courses &&
+        courses.map((course) => (
+          <CourseCard key={course._id} course={course} />
+        ))}
+    </div>
   );
 };
 

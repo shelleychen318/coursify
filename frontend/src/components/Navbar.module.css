@@ -30,6 +30,7 @@
   font-size: 16px;
   font-weight: 600;
   transition: all 0.3s ease-in-out;
+  margin-left: 1rem;
 }
 
 .logoutButton:hover {
