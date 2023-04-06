@@ -1,4 +1,4 @@
-.navbar {
+.header {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 3rem;
@@ -7,9 +7,34 @@
   justify-content: space-between;
 }
 
+.navLinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .logo {
   color: var(--primary);
   text-decoration: none;
+}
+
+.logoutButton {
+  width: fit-content;
+  padding: 0.8rem 1rem;
+  font-family: "Poppins";
+  border: 3px solid var(--primary);
+  background-color: var(--bg);
+  color: var(--primary);
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.logoutButton:hover {
+  background-color: var(--primary);
+  color: var(--bg);
 }
 
 .links {

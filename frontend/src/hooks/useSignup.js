@@ -10,6 +10,7 @@ export const useSignup = () => {
     setIsLoading(true);
     setError(null);
 
+    // send POST request to server to sign up new user
     const response = await fetch("/api/user/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

@@ -46,7 +46,7 @@ select {
 }
 
 .addButton:hover {
-  filter: brightness(115%);
+  background-color: #7382fd;
 }
 
 input.emptyField,
