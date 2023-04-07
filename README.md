@@ -3,9 +3,9 @@
 A full-stack web app that keeps track of the courses you've completed in university so far.
 
 ## Tech Stack
-Database: MongoDB, Mongoose  
-Backend: Node.js, Express  
 Frontend: React  
+Backend: Node.js, Express  
+Database: MongoDB, Mongoose  
 
 ## Demo
 
