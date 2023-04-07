@@ -1,6 +1,6 @@
 # Coursify
 
-A full-stack web app that keeps track of the courses you've taken so far in university.
+A full-stack web app that keeps track of the courses you've completed in university so far.
 
 ## Tech Stack
 Database: MongoDB, Mongoose  
